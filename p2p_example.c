@@ -1,4 +1,5 @@
-
+/* If this file is run in two different shells on the same computer it will commicate will its counter part
+*/
 #include <unistd.h> 
 #include <stdio.h> 
 #include <sys/socket.h> 
