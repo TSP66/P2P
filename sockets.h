@@ -6,9 +6,9 @@
 #include <string.h> 
 #include <arpa/inet.h> 
 
-#define PORT 8089
+#define PORT 8089 //The port
 
-char * message;
+char * message; //The message to send
 
 char buffer[1024] = {0}; 
 
@@ -96,18 +96,18 @@ return 0;
 
 } 
 
-void SEND(){
-        send(sock , message , strlen(message) , 0 ); 
+void SEND(){ //Send a char array through, choose what to send by changing char * message
+        send(sock , message , strlen(message) , 0 );  
 	//printf("%s", message); 
 
 }
-void READ(){
+void READ(){ //print the information from the port and save it in buffer
         int valread;
         valread = read(sock , buffer, 1024); 
 	printf("%s\n",buffer ); 
 }
 
-int boot(){
+int boot(){ //the boot command checks if there is a connection on the port; if there is it connects to it, if not it creates one
  int b = 0; 
  if(setup_as_client() == -1){
  setup_as_server();
